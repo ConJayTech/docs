@@ -36,35 +36,35 @@ Get a campaign's basic details and targeting details by ID with the following en
 
 | Property | Type | Description |
 |---|---|---|
-| `id` | integer | campaign ID |
-| `campaignName` | string | campaign Name |
-| `advertiserDomain` | string | campaign Advertiser Domain |
-| `creativeType` | integer | creative type ID |
-| `totalBudgetPacing` | boolean | false indicates off true indicates on |
-| `budgetDay` | integer | daily budget of campaign |
-| `budgetTotal` | integer | total budget fo campign |
-| `maxBid` | integer | max bid of budget for serving |
-| `status` | string | status of campaign |
-| `dspMargin` | integer | for dsp margin |
-| `platformMargin` | integer | for platform margin |
-| `userDealMargin` | integer | for user deal margin |
-| `spentScale` | boolean | spent scale for campaign |
-| `conversionType` | string | conversion type of campaign |
-| `spent` | integer | campaign spent |
-| `bidOptimization` | integer | bid optimization true/false |
-| `bidPacing` | boolean | bid pacing on/ off |
-| `impressionCapping` | integer | impressionCapping on/off |
-| `exchanges` | string | comma seprated exchange IDs |
-| `stateIds` | string | comma seprated state IDs |
-| `countryId` | integer | country ID |
-| `locationDetails` | Json | location by uploaded file with targeting type |
-| `campaignIabCategoryIds` | string | comma seprated campaign iab categories |
+| `id` | integer | Campaign ID |
+| `campaignName` | string | Campaign Name |
+| `advertiserDomain` | string | Campaign Advertiser Domain |
+| `creativeType` | integer | Creative type ID |
+| `totalBudgetPacing` | boolean | False indicates off true indicates on |
+| `budgetDay` | integer | Daily budget of campaign |
+| `budgetTotal` | integer | Total budget for campign |
+| `maxBid` | integer | Max bid of budget for serving |
+| `status` | string | Status of campaign |
+| `dspMargin` | integer | Campaign DSP Margin |
+| `platformMargin` | integer | Campaign platform margin |
+| `userDealMargin` | integer | Campaign user deal margin |
+| `spentScale` | boolean | Spent scale for campaign |
+| `conversionType` | string | Conversion type of campaign |
+| `spent` | integer | Campaign spent |
+| `bidOptimization` | integer | Bid optimization true/false |
+| `bidPacing` | boolean | Bid pacing on/ off |
+| `impressionCapping` | integer | Maximum impressions in one inventory |
+| `exchanges` | string | Comma separated exchange IDs |
+| `stateIds` | string | Comma separated state IDs |
+| `countryId` | integer | Country ID |
+| `locationDetails` | Json | Location by uploaded file with targeting type |
+| `campaignIabCategoryIds` | string | Comma separated campaign iab categories |
 | `rejectionReason` | string | Reason of rejecting campaign |
-| `creativesPlacementMapping` | json | ad placement mapping with creatives. (present in case of audio and video campaigns) |
+| `creativesPlacementMapping` | json | Ad placement mapping with creatives (present in case of audio and video campaigns) |
 | `organizationName` | string | Organization name |
 | `userName` | string | Name of user |
 | `userEmail` | string | Email of user |
-| `conversionIds` | string | comma separated conversions IDs. |
+| `conversionIds` | string | Comma separated conversions IDs. |
 
 \
 Response 200 Sample
@@ -205,7 +205,6 @@ Response 200 Sample (list of campaigns)
     ]
 }
 ```
-
 
 ## Update Campaign
 
@@ -395,7 +394,7 @@ This API returns a count of campaigns for each status type with the following en
 | `owIds` | string | Comma separated, returns campaign counts for given OwIDs (can =`all`)
 | `ioIds`| string | Comma separated, returns campaign counts for given IO IDs (with `owIds`= `all`)
 | `campaignTypeIds` | string | Comma separated, returns campaign counts for given Campaign Type (`ioIds` also required)
-| `campaignExpiredAfterEpoch` | integer | Unix epoch timestamp expiration
+| `campaignExpiredAfterEpoch` | integer | Unix epoch timestamp (in milliseconds) expiration
 | `searchField` | string | Returns campaign counts for field matched campaign ID or Name
 
 
@@ -486,24 +485,24 @@ The campaign API allows the user to retrieve Insertion Order (IO) details with t
 
 | Property | Type | Description |
 |---|---|---|
-| `ioId` | integer | Insertion Order ID
-| `ioName` | string | Insertion Order name
-| `owId` | integer | Organization
-| `createdByUowId` | integer | User Organization Worskpace ID associated with IO creation
-| `modifiedByUowId` | integer | User Organization Worskpace ID associated with IO modification
-| `ioStartTime` | integer | Unix epoch timestamp of IO start time
-| `ioEndTime` | integer | Unix epoch timestamp of IO end time
-| `ioTotalBudget` | integer | Budget of IO
-| `ioTimeZoneId` | integer | Time Zone ID
-| `isAutoSumIoTotalBudget` | boolean | True: Keep IO budget same as total budget of all included campaigns
-| `ioBudgetDistributionMethodId` | integer | Budget Distribution Method ID
-| `ioBudgetTypeId` | integer | Budget type ID 
-| `ioTotalImpression` | integer | Number of impressions 
-| `ioStatusID` | integer | Status ID
-| `ioNextPerformanceCheck` | integer | Unix epoch timestamp of next performance check
-| `ioLastPriorityShift` | integer | Unix epoch timestamp
-| `ioCurrentPriority` | integer | Current IO campaigns priority
-| `isIoPrioritise` | integer | All child campaigns will be considered with or withot priority
+| `ioId` | integer | Insertion Order ID|
+| `ioName` | string | Insertion Order name|
+| `owId` | integer | Organization|
+| `createdByUowId` | integer | User Organization Worskpace ID associated with IO creation|
+| `modifiedByUowId` | integer | User Organization Worskpace ID associated with IO modification|
+| `ioStartTime` | integer | Unix epoch timestamp (in milliseconds) of IO start time|
+| `ioEndTime` | integer | Unix epoch timestamp (in milliseconds) of IO end time|
+| `ioTotalBudget` | integer | Budget of IO|
+| `ioTimeZoneId` | integer | Timezone ID|
+| `isAutoSumIoTotalBudget` | boolean | True: Keep IO budget same as total budget of all included campaigns|
+| `ioBudgetDistributionMethodId` | integer | Budget Distribution Method ID|
+| `ioBudgetTypeId` | integer | Budget type ID |
+| `ioTotalImpression` | integer | Number of impressions |
+| `ioStatusID` | integer | Status ID|
+| `ioNextPerformanceCheck` | integer | Unix epoch timestamp (in milliseconds) of next performance check|
+| `ioLastPriorityShift` | integer | Unix epoch timestamp (in milliseconds)|
+| `ioCurrentPriority` | integer | Current IO campaigns priority|
+| `isIoPrioritise` | integer | All child campaigns will be considered with or withot priority|
 
 \
 **Request Body Schema: application/json**
@@ -518,8 +517,8 @@ The campaign API allows the user to retrieve Insertion Order (IO) details with t
 | `isAllOWIds` | boolean | Flag for consider all the owId for IO details (`true` = consider all the owId for which user has access, `false` = consider only provided owIds). |
 | `pageNo` | integer | page number for required data. |
 | `noOfEntries` | integer | Number of records per page. |
-| `searchField` | String | Name of search field (Support is available for name and ID). |
-| `sortBy` | String | Comma separated names of the sorting field. it support multiple column sorting. for descending order user -(minus) and +(plus)(ascii value '%2B') for ascending order. i.g. `ioId`, `ioName`, `ioStartTime`, `ioEndTime`, `ioTotalBudget`. |
+| `searchField` | String | Name of search field (supported values: `name` and `id`). |
+| `sortBy` | String | Comma separated names of the sorting field. Sorts by ascending (`+`) or descending (`-`). Supported values: `ioId`, `ioName`, `ioStartTime`, `ioEndTime`, `ioTotalBudget`. |
 | `offset` | integer | Offset is alternative of page number. Offset is number of records to be skipped |
 
 \
@@ -624,18 +623,18 @@ Optional parameters to filter/sort results
 
 | Property | Type | Description |
 | ---- | ---- | --- |
-| `pageNo` | integer | Page number for the desired data. Default: `1`
-| `noOfEntries` | integer | The maximum number of returned results per page. Default: `20` 
-| `sortBy` | string | Sort the result by specific field. For ascending use plus(+) sign(ascii value '%2B') and for descending use minus(-) sign. Supported values are as follows: `ioId`, `ioName`, `ioStartTime`, `ioEndTime`, `ioTotalBudget`, `campaignId`, `isRecordTargeted` 
+| `pageNo` | integer | Page number for the data, default: `1` |
+| `noOfEntries` | integer | Maximum number of entries returned, default: `20` |
+| `sortBy` | string | Sorts by ascending (`+`) or descending (`-`) Supported values: `ioId`, `ioName`, `ioStartTime`, `ioEndTime`, `ioTotalBudget`, `campaignId`, `isRecordTargeted` |
 | `searchField` | string | Search the result by keyword |
-| `ioIdsList` | array of integers | Filter by Insertion Order IDs. Records matching provided IDs will be returned first, before others
-| `campaignTypeIds` | array of integers | Returns selected campaign type IDs e.g. 'advanced campaign' or 'PG campaign', 'records matching'
-| `ids` | array of integers | Filters for Campaign IDs
-| `ioIds` | array of integers | Filters for Insertion Order IDs
-| `status` | array of string | Filters for types of Campaign Status
-| `creativeTypeIds` | array of integers | Filters for Creative Type IDs
-| `ioBudgetTypeIds` | array of integers | Filters for Budget Type IDs
-| `owIds` | array of integers | Filters for customer Organization Workspace IDs
+| `ioIdsList` | array of integers | Filter by Insertion Order IDs. Records matching provided IDs will be returned first, before others |
+| `campaignTypeIds` | array of integers | Returns selected campaign type IDs e.g. 'advanced campaign' or 'PG campaign', 'records matching' |
+| `ids` | array of integers | Filters for Campaign IDs |
+| `ioIds` | array of integers | Filters for Insertion Order IDs |
+| `status` | array of string | Filters for types of Campaign Status |
+| `creativeTypeIds` | array of integers | Filters for Creative Type IDs |
+| `ioBudgetTypeIds` | array of integers | Filters for Budget Type IDs |
+| `owIds` | array of integers | Filters for customer Organization Workspace IDs |
 | `offset` | integer | Offset is alternative of page number. Offset is number of records to be skipped |
 
 \
@@ -830,17 +829,17 @@ Optional parameters to filter/sort results
 
 | Property | Type | Description |
 | ---- | ---- | --- |
-| `pageNo` | integer | Page number for the desired data. Default: `1`
-| `noOfEntries` | integer | The maximum number of returned results per page. Default: `20` 
-| `sortBy` | string | Sort the result by specific field. For ascending use plus(+) sign(ascii value '%2B') and for descending use minus(-) sign. Supported values are as follows: `clicks`, `impressions`, `bidImpressions`, `startCount`, `firstCount`, `midCount`, `thirdCount`, `completeCount`, `dataCost`, `spent`, `mediaSpent`, `winRate`, `VCR`, `eCPC`, `eCPM`, `eCPI`, `CTR`, `CVR`, `eCPCV`, `eCPV`, `budgetDay`, `budgetTotal`, `campaignId`, `campaignName`, `maxBid`, `startTime`, `endTime`, `campaignType`, `status`, `budgetDay`, `budgetTotal`, `reach`, `frequency`, `mappingDataCost`, `mappingSpent`, `percentageOfTotalSpent`, `organizationName`, `audioVideoViewed`, `campaignTimezone`, `pixalateViewAbility`, `ioName`, `ioId`, `targetImpression`, `creativesCount`, `pacingPercentage`, `dailyPacingPercentage`, `prebidCost`, `ioTotalImpressions`, `dailyImpressions`,`campaignPriority` ,`totalAttributedConversion`, `totalAttributedViewThroughConversion`,`totalAttributedClickThroughConversion`,`costPerAttributedConversion`,`totalAttributedConversionRate` |
+| `pageNo` | integer | Page number for the data, default: `1` |
+| `noOfEntries` | integer | The maximum number of returned results per page, default: `20` |
+| `sortBy` | string | Sorts by ascending (`+`) or descending (`-`). Supported values: `clicks`, `impressions`, `bidImpressions`, `startCount`, `firstCount`, `midCount`, `thirdCount`, `completeCount`, `dataCost`, `spent`, `mediaSpent`, `winRate`, `VCR`, `eCPC`, `eCPM`, `eCPI`, `CTR`, `CVR`, `eCPCV`, `eCPV`, `budgetDay`, `budgetTotal`, `campaignId`, `campaignName`, `maxBid`, `startTime`, `endTime`, `campaignType`, `status`, `budgetDay`, `budgetTotal`, `reach`, `frequency`, `mappingDataCost`, `mappingSpent`, `percentageOfTotalSpent`, `organizationName`, `audioVideoViewed`, `campaignTimezone`, `pixalateViewAbility`, `ioName`, `ioId`, `targetImpression`, `creativesCount`, `pacingPercentage`, `dailyPacingPercentage`, `prebidCost`, `ioTotalImpressions`, `dailyImpressions`,`campaignPriority` ,`totalAttributedConversion`, `totalAttributedViewThroughConversion`,`totalAttributedClickThroughConversion`,`costPerAttributedConversion`,`totalAttributedConversionRate` |
 | `searchField` | string | Search the result by keyword |
-| `ioIdsList` | array of integers | Filter by Insertion Order IDs. Records matching provided IDs will be returned first, before others
-| `budgetTypeIdList` | array of integers | Filters for selected Budget Type IDs e.g. "impression based" or "budget based". Records matching the provided IDs will be returned
-| `campaignIds` | array of integers | Filters for selected Campaign IDs. Records matching the provided IDs will be returned first, before others
-| `timeZoneId` | integer | Filters campaigns for specified Time Zone ID
-| `campaignStatusList` | array of strings | Filters campaigns by specified Campaign Status
-| `creativeTypeIds` | string | Filters campaigns by specified Creative Type ID
-| `owIds` | string | Filters campaigns by specified customer Organization Workspace ID
+| `ioIdsList` | array of integers | Filter by Insertion Order IDs. Records matching provided IDs will be returned first, before others |
+| `budgetTypeIdList` | array of integers | Filters for selected Budget Type IDs e.g. "impression based" or "budget based". Records matching the provided IDs will be returned |
+| `campaignIds` | array of integers | Filters for selected Campaign IDs. Records matching the provided IDs will be returned first, before others |
+| `timeZoneId` | integer | Filters campaigns for specified Timezone ID |
+| `campaignStatusList` | array of strings | Filters campaigns by specified Campaign Status |
+| `creativeTypeIds` | string | Filters campaigns by specified Creative Type ID |
+| `owIds` | string | Filters campaigns by specified customer Organization Workspace ID |
 
 \
 Request Sample
@@ -1095,8 +1094,7 @@ Manage various aspects of an Insertion Order, use the following Header Parameter
 | `X-IAA-HOST` | string [required] | Workspace URL |
 | `X-IAA-OW-ID` | integer [required] | Organization Worskpace ID Header |
 
-
-### Create an Insertion Order 
+### Create an Insertion Order
 
 Create a new Insertion Order based on budget or impressions with the following endpoint:
 
@@ -1150,7 +1148,6 @@ Response 200 Sample
 }
 ```
 
-
 ### Duplicate an Insertion Order
 
 Duplicate a single IO, and all campaigns within that IO with the following endpoint:
@@ -1162,11 +1159,11 @@ Duplicate a single IO, and all campaigns within that IO with the following endpo
 
 | Property | Type | Description |
 | ---- | ---- | --- |
-| `ioExistingCampaignIds` | array of integers | Campaign IDs within specified IO (`ioId`)
-| `ioId` | integer | Specified IO to duplicate
-| `ioTimeZoneId` | integer | Time Zone ID
-| `ioEndTime` | integer | Unix epoch of IO end time
-| `ioStartTime` | integer | Unix epoch of IO start time
+| `ioExistingCampaignIds` | array of integers | Campaign IDs within specified IO (`ioId`) |
+| `ioId` | integer | Specified IO to duplicate |
+| `ioTimeZoneId` | integer | Timezone ID |
+| `ioEndTime` | integer | Unix epoch of IO end time |
+| `ioStartTime` | integer | Unix epoch of IO start time |
 
 \
 Request Sample
@@ -1211,7 +1208,7 @@ Delete one or multiple IOs and all campaigns attached to them with the following
 
 | Property | Type | Description |
 | ---- | ---- | --- |
-| `ioIdsList` | array of integers | Insertion Order IDs
+| `ioIdsList` | array of integers | Insertion Order IDs |
 
 \
 Request Sample
@@ -1241,16 +1238,16 @@ Update the details, end dates, and budgets of insertion orders with the followin
 
 | Method | Endpoint | Description |
 | --- | --- | --- |
-| `PATCH` | /api/v3/cmp/io/{ioId} | Update details of specified IO. See IO [resource properties](#resource-properties-1) above for supported values
-| `PATCH` | /api/v3/cmp/io/update-end-date | Update the end date for a given list of IOs. See [full documentation](https://api.iqm.com/docs?path=tag/Campaign-API/operation/updateIOEndDate)
-| `PATCH` | /api/v3/cmp/io/update-budget | Update the budget for a given list of IOs. See [full documentation](https://api.iqm.com/docs?path=tag/Campaign-API/operation/updateIOBudgetByIOList)
+| `PATCH` | /api/v3/cmp/io/{ioId} | Update details of specified IO. <br>See IO [resource properties](#resource-properties-1) above for supported values
+| `PATCH` | /api/v3/cmp/io/update-end-date | Update the end date for a given list of IOs. <br>See [full documentation](https://api.iqm.com/docs?path=tag/Campaign-API/operation/updateIOEndDate)
+| `PATCH` | /api/v3/cmp/io/update-budget | Update the budget for a given list of IOs. <br>See [full documentation](https://api.iqm.com/docs?path=tag/Campaign-API/operation/updateIOBudgetByIOList)
 
 \
 **Path Parameters** (where applicable)
 
 | Property | Type | Description |
 | ---- | ---- | --- |
-| `ioId` | integer | Insertion Order ID
+| `ioId` | integer | Insertion Order ID |
 
 \
 **Header Parameters**
