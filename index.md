@@ -64,6 +64,7 @@ These guidelines pages will help you navigate common methods and resources in th
 * [Get List of Bid Model Dimensions](/Bid-Model-API-Guidelines.md#get-list-of-bid-model-dimensions)
 
 #### [Inventory API](/Inventory-API-Guide.md)
+
 * [Get Inventory Details](/Inventory-API-Guide.md#get-inventory-details)
 * [Inventory Management](/Inventory-API-Guide.md#inventory-management)
 * [Inventory Groups](/Inventory-API-Guide.md#inventory-groups)
@@ -74,18 +75,32 @@ These guidelines pages will help you navigate common methods and resources in th
 * [PG Deals Management](/Inventory-API-Guide.md#pg-management)
 
 #### [Reports API](/Reports-API-Guidelines.md)
+
 * [Get Report Details](/Reports-API-Guidelines.md#get-reports-details)
 * [Reports Management](/Reports-API-Guidelines.md#reports-management)
 * [Scheduling Management](/Reports-API-Guidelines.md#scheduling-management)
 * [Get More Report Details](/Reports-API-Guidelines.md#get-more-report-details)
 
 #### [Conversions API](/Conversion-API-Guidelines.md)
+
 * [Get Conversions Details](/Conversion-API-Guidelines.md#get-conversion-details)
 * [Conversions Management](/Conversion-API-Guidelines.md#conversions-management)
 * [Get More Conversion Details](/Conversion-API-Guidelines.md#get-more-conversion-details)
 
+#### [Insights API](/Insights-API-Guidelines.md)
+
+* [Get Insights Details](/Insights-API-Guidelines.md#get-insights-details)
+* [Insights Management](/Insights-API-Guidelines.md#insights-management)
+* [Voter Level Data Reports](/Insights-API-Guidelines.md#voter-level-data-reports)
+* [Get More Insights Details](/Insights-API-Guidelines.md#get-more-insights-details)
+
+#### [Assets API](/Assets-API-Guidelines.md)
+
+* [Get Assets Details](/Assets-API-Guidelines.md#get-assets-details)
+* [Assets Management](/Assets-API-Guidelines.md#assets-management)
 
 #### [Master API Guidelines](/Master-API-Guidelines.md)
+
 * [Get Geographical Data](/Master-API-Guidelines.md#get-geographical-data)
 * [Get Creative Data](/Master-API-Guidelines.md#get-creative-data)
 * [Get More Data](/Master-API-Guidelines.md#get-more-data)
