@@ -187,18 +187,45 @@ Create a new plan based on the provided forecast parameters with the following e
         <td>Name for pixel conversion</td>
     </tr>
      <tr>
-        <td><code>name</code></td>
-        <td>string</td>
+        <td><code>location</code></td>
+        <td>object</td>
         <td>Name for pixel conversion</td>
     </tr>
 </table>
-<details><summary></summary>
+<details><summary><code>location</code> properties</summary>
 <table>
    <tr>
-        <td><code>childProperty</code></td>
+        <td><code>included</code></td>
         <td>string</td>
         <td>Attribution type ID</td>
-    </tr></table></details>
+    </tr>
+      <tr>
+        <td><code>excluded</code></td>
+        <td>string</td>
+        <td>Attribution type ID</td>
+    </tr>
+      <tr>
+        <td><code>filtersStore</code></td>
+        <td>string</td>
+        <td>Attribution type ID</td>
+    </tr></table>
+    <details><summary><code>included</code>, <code>excluded</code>, <code>filterStore</code> properties</summary>
+<table>
+   <tr>
+        <td><code>counties</code></td>
+        <td>string</td>
+        <td>Attribution type ID</td>
+    </tr>
+      <tr>
+        <td><code>cities</code></td>
+        <td>string</td>
+        <td>Attribution type ID</td>
+    </tr>
+      <tr>
+        <td><code>stateSenates</code></td>
+        <td>string</td>
+        <td>Attribution type ID</td>
+    </tr></table></details></details>
 <table>
     <tr>
         <td><code>attributionId</code></td>
