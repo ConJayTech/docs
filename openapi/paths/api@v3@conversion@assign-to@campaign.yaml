@@ -1,0 +1,84 @@
+post:
+  tags:
+    - Conversion API
+  summary: API for assign conversion to campaign
+  description: >-
+    This api assigns conversion to campaign while validating the conversionIds
+    as well as the campaignIds.
+  operationId: assignConversionToCampaign
+  parameters:
+    - name: assignConversionToCampaign
+      in: query
+      description: >-
+        Map containing details list of campaignIds which needs to be
+        added/removed.
+    - name: Authorization
+      in: header
+      description: Authorization Bearer Token
+      example: Bearer 0ed52da8-24ab-44b1-bc88-7ea03a090d24
+    - name: X-IAA-OW-ID
+      in: header
+      description: Organization Workspace Id Header
+      example: 1
+  requestBody:
+    content:
+      application/json:
+        schema:
+          type: object
+          properties:
+            conversionIdList:
+              type: array
+              items:
+                type: integer
+                format: int32
+            addCampaignsList:
+              type: array
+              items:
+                type: integer
+                format: int32
+            removeCampaignsList:
+              type: array
+              items:
+                type: integer
+                format: int32
+    required: true
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          examples:
+            Assign to Campaign with Valid CampaignIds and Valid ConversionIds:
+              description: >-
+                This responses provides message for saved conversionIds and
+                campaignIds.
+              value:
+                success: true
+                data:
+                  conversionIdsList: 3925
+                  validAddCampaignIdsList:
+                    - 253396
+                    - 256374
+                  invalidAddCampaignIdsList:
+                    - 234567
+                  validRemoveCampaignIdsList:
+                    - 256321
+                    - 256432
+                  invalidRemoveCampaignIdsList:
+                    - 256433
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          example:
+            success: false
+            errorObjects:
+              - error: Forbidden!
+    '500':
+      description: Internal server error
+      content:
+        application/json:
+          example:
+            success: false
+            errorObjects:
+              - error: server encountered an error !

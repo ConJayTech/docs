@@ -1,0 +1,63 @@
+patch:
+  tags:
+    - Conversion API
+  summary: Update Postback type Conversion.
+  description: This api is used to update name of a postback type conversion.
+  operationId: updateConversion
+  parameters:
+    - name: Authorization
+      in: header
+      description: Authorization Bearer Token
+      example: Bearer 0ed52da8-24ab-44b1-bc88-7ea03a090d24
+    - name: X-IAA-OW-ID
+      in: header
+      description: Organization Workspace Id Header
+      example: 1
+  requestBody:
+    content:
+      application/json:
+        schema:
+          required:
+            - name
+          type: object
+          properties:
+            id:
+              type: integer
+              format: int32
+            name:
+              maxLength: 255
+              minLength: 0
+              type: string
+        examples:
+          RequestBody for Updating Pixel Conversion:
+            description: RequestBody for Updating Pixel Conversion
+            value:
+              id: '3114'
+              name: Postback Conversion Update testing
+    required: true
+  responses:
+    '200':
+      description: OK
+      content:
+        application/json:
+          example:
+            success: true
+            data:
+              id: 3114
+              name: Postback Conversion Update testing
+    '403':
+      description: Forbidden
+      content:
+        application/json:
+          example:
+            success: false
+            errorObjects:
+              - error: Forbidden!
+    '500':
+      description: Internal server error
+      content:
+        application/json:
+          example:
+            success: false
+            errorObjects:
+              - error: server encountered an error !

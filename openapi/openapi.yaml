@@ -1,0 +1,11 @@
+openapi: 3.0.0
+info:
+  title: Documentation for Organization
+  version: 1.0.0
+paths:
+  /api/v3/conversion/pixel/add:
+    $ref: paths/api@v3@conversion@pixel@add.yaml
+  /api/v3/conversion/assign-to/campaign:
+    $ref: paths/api@v3@conversion@assign-to@campaign.yaml
+  /api/v3/conversion/postback/update:
+    $ref: paths/api@v3@conversion@postback@update.yaml
